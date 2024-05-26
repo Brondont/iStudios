@@ -1,10 +1,14 @@
 import React from "react";
 import { Box } from "@mui/material";
+import { Route, Routes } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { BrowserRouter } from "react-router-dom";
+import "@fontsource/inter";
+import "./App.css";
 
 // local imports
 import Navbar from "./components/navbar/Navbar";
+import LandingPage from "./pages/public/LandingPage";
+import NotFoundPage from "./pages/public/NotFoundPage";
 
 // global site theme
 const theme = createTheme({
@@ -16,7 +20,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: "sans-serif",
+    fontFamily: "Inter, sans-serif",
     button: {
       textTransform: "none",
     },
@@ -27,9 +31,13 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <Box>
-        <BrowserRouter>
-          <Navbar />
-        </BrowserRouter>
+        <Navbar />
+        <Box sx={{ height: "100vh", width: "100%" }}>
+          <Routes>
+            <Route path="/" element={<LandingPage />}></Route>
+            <Route path="*" element={<NotFoundPage />}></Route>
+          </Routes>
+        </Box>
       </Box>
     </ThemeProvider>
   );
