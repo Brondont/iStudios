@@ -51,6 +51,7 @@ const PortfolioPage: React.FC = () => {
           flexDirection: "column",
           mt: 24,
         }}
+        style={{ overflowY: "hidden" }}
       >
         <Typography
           sx={{ fontSize: "64px", lineHeight: "77.45px", weight: 500 }}
