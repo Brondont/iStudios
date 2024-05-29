@@ -6,7 +6,7 @@ const NotFoundPage: React.FC = () => {
     <Box
       sx={{
         display: "flex",
-        height: "100%",
+        height: "90vh",
         width: "100%",
         alignItems: "center",
         justifyContent: "center",

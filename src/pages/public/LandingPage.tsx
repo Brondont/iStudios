@@ -1,5 +1,10 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Button } from "@mui/material";
+
+import ServiceCard from "../../components/serviceCard/ServiceCard";
+import WorkCard from "../../components/wordCard/WorkCard";
+import UserReviewCard from "../../components/userReviewCard/userReviewCard";
+import ContactUs from "../../components/contactUs/ContactUs";
 
 import computerImage from "../../public/images/computer.png";
 
@@ -8,7 +13,6 @@ const LandingPage: React.FC = () => {
     <Box
       sx={{
         display: "flex",
-        width: "100vw",
         flexDirection: "column",
       }}
     >
@@ -16,7 +20,6 @@ const LandingPage: React.FC = () => {
         sx={{
           position: "relative",
           display: "flex",
-          width: "100vw",
           height: "100%",
         }}
       >
@@ -65,6 +68,60 @@ const LandingPage: React.FC = () => {
         />
         <Box
           sx={{
+            position: "absolute",
+            top: "45%",
+            zIndex: 2,
+            left: "57%",
+          }}
+        >
+          <Typography
+            sx={{
+              fontSize: "30px",
+              fontWeight: 500,
+              lineHeight: "36.31px",
+              textAlign: "center",
+            }}
+          >
+            Elevate Your
+          </Typography>
+          <Typography
+            sx={{
+              fontSize: "48px",
+              fontWeight: 500,
+              lineHeight: "58.09px",
+              textAlign: "center",
+            }}
+          >
+            Digital Presence
+          </Typography>
+          <Typography
+            sx={{
+              fontSize: "30px",
+              fontWeight: 500,
+              lineHeight: "36.31px",
+              textAlign: "center",
+            }}
+          >
+            With iStudios
+          </Typography>
+          <Button
+            variant="contained"
+            sx={{
+              mt: 2,
+              backgroundColor: "primary.dark",
+              color: "primary.main",
+              width: "613px",
+              height: "80px",
+              fontSize: "40px",
+              lineHeight: "48.41px",
+              borderRadius: "16px",
+            }}
+          >
+            Book a free consultation now
+          </Button>
+        </Box>
+        <Box
+          sx={{
             display: "flex",
             alighItems: "center",
             justifyContent: "center",
@@ -94,8 +151,115 @@ const LandingPage: React.FC = () => {
           </Typography>
         </Box>
       </Box>
-      <Box sx={{ position: "relative", display: "flex" }}>
-        <Box>HELLO RETARDDD</Box>
+      <Box
+        sx={{
+          position: "relative",
+          display: "flex",
+          justifyContent: "center",
+          flexDirection: "column",
+          width: "100%",
+        }}
+      >
+        <Box
+          sx={{
+            width: "100%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            flexDirection: "column",
+            mt: 10,
+          }}
+        >
+          <Typography
+            sx={{ fontSize: "64px", lineHeight: "77.45px", weight: 500 }}
+          >
+            Our services
+          </Typography>
+          <Box
+            sx={{
+              mt: 4,
+              display: "flex",
+              gap: "16px",
+              flexWrap: "wrap",
+              justifyContent: "center",
+            }}
+          >
+            <ServiceCard
+              title="Digital marketing"
+              description="SEO, PPC, social media"
+            />
+            <ServiceCard
+              title="Content marketing"
+              description="Social media posts & strategies"
+            />
+            <ServiceCard
+              title="Web design & dev"
+              description="UI/UX designs, websites"
+            />
+            <ServiceCard
+              title="Branding & creative services"
+              description="Identity, social media designs..."
+            />
+          </Box>
+        </Box>
+        <Box
+          sx={{
+            width: "100%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            flexDirection: "column",
+            mt: 10,
+          }}
+        >
+          <Typography
+            sx={{ fontSize: "64px", lineHeight: "77.45px", weight: 500 }}
+          >
+            Our work
+          </Typography>
+          <Box
+            sx={{
+              mt: 4,
+              display: "flex",
+              gap: "40px",
+              flexWrap: "wrap",
+              justifyContent: "center",
+            }}
+          >
+            <WorkCard title="" imageUrl="" />
+            <WorkCard title="" imageUrl="" />
+            <WorkCard title="" imageUrl="" />
+          </Box>
+        </Box>
+        <Box
+          sx={{
+            width: "100%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            flexDirection: "column",
+            mt: 10,
+          }}
+        >
+          <Typography
+            sx={{ fontSize: "64px", lineHeight: "77.45px", weight: 500 }}
+          >
+            Reviews
+          </Typography>
+          <Box
+            sx={{
+              mt: 4,
+              display: "flex",
+              gap: "40px",
+              flexWrap: "wrap",
+              justifyContent: "center",
+            }}
+          >
+            <UserReviewCard username="" userReview="" profileImageUrl="" />
+            <UserReviewCard username="" userReview="" profileImageUrl="" />
+          </Box>
+        </Box>
+        <ContactUs />
       </Box>
     </Box>
   );
