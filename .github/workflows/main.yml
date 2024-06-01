@@ -23,9 +23,6 @@ jobs:
       - name: Dependecies
         run: npm ci
 
-      - name: Build
-        run: npm run build
-
       - name: Save version
         id: version
         run: run echo ::set-output name=tag::$(echo $(node -p -e "require('./package.json').version"))
